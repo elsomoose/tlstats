@@ -7,7 +7,7 @@ list= names.split() #makes input into list
 for user in list: 
     try:
         response= requests.get('https://ch.tetr.io/api/users/'+user) #finds api
-        userstats= response.json() #makes into library (i think)
+        userstats= response.json() #makes into dictionary (i think)
         userrank= str(userstats['data']['user']['league']['rank'])#finds rank in api
         if userrank=='z': 
             userrank=userrank.replace ('z','?') #people with no current tl rank (rd is over 100) will be marked as z but made as question mark as is more commonly known
